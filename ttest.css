@@ -1,0 +1,798 @@
+:root {
+    --bg-start: #ffffff;
+    --bg-end: #f7fafc;
+    --heading: #0b1220;
+    --muted: #4b5563;
+    --accent-bg: #0f172a;
+    --accent-hover: #111827;
+    --outline: #e6e9ee;
+    --radius: 10px;
+    --max-width: 920px;
+  }
+  
+  /* Reset */
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+    background: linear-gradient(180deg, var(--bg-start) 0%, var(--bg-end) 100%);
+    color: var(--heading);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* HERO */
+  .hero {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3.5rem 1.25rem;
+  }
+  
+  .hero__inner {
+    width: 100%;
+    max-width: var(--max-width);
+    text-align: center;
+    margin-inline: auto;
+    padding: 1rem;
+  }
+  
+  .portrait {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: inline-block;
+    box-shadow: 0 8px 24px rgba(12, 20, 30, 0.06);
+    border: 4px solid rgba(15, 23, 42, 0.03);
+    margin-bottom: 1.25rem;
+  }
+  
+  h1 {
+    margin: 0;
+    font-weight: 800;
+    font-size: 2.375rem;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+  
+  .highlight {
+    color: var(--accent-bg);
+  }
+  
+  .lead {
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.0625rem;
+    font-weight: 400;
+    color: var(--muted);
+  }
+  
+  .cred {
+    margin: 0.5rem 0 1.35rem;
+    color: #6b7280;
+    font-size: 0.92rem;
+  }
+  
+  /* CTA Buttons */
+  .ctas {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1.25rem;
+  }
+  
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s ease;
+  }
+  
+  .btn:focus {
+    outline: 3px solid rgba(15, 23, 42, 0.15);
+    outline-offset: 3px;
+  }
+  
+  .btn-primary {
+    background: var(--accent-bg);
+    color: #fff;
+  }
+  
+  .btn-primary:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+  }
+  
+  .btn-secondary {
+    border: 1px solid var(--outline);
+    color: var(--heading);
+    background: transparent;
+  }
+  
+  .btn-secondary:hover {
+    background: rgba(15, 23, 42, 0.05);
+    transform: translateY(-1px);
+  }
+  
+  /* Tech row */
+  .tech-row {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.6rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 0.92rem;
+    color: #6b7280;
+  }
+  
+  .tech-pill {
+    padding: 0.35rem 0.65rem;
+    border-radius: 999px;
+    border: 1px solid rgba(15, 23, 42, 0.05);
+    background: rgba(15, 23, 42, 0.02);
+    font-weight: 500;
+  }
+  
+  /* Responsive */
+  @media (min-width: 720px) {
+    h1 { font-size: 3rem; }
+    .lead { font-size: 1.125rem; }
+    .portrait { width: 160px; height: 160px; }
+  }
+  
+  @media (max-width: 520px) {
+    h1 { font-size: 1.875rem; }
+    .ctas { flex-direction: column; gap: 0.6rem; }
+    .btn { justify-content: center; width: 100%; }
+    .portrait { width: 120px; height: 120px; }
+  }
+  /* Basic variables */
+:root{
+    --accent: #2ff1d6;
+    --accent-border: #e11d48; /* used for CTA border */
+    --text-white: #ffffff;
+    --max-width: 1200px;
+    --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  
+  /* Reset-ish */
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family: var(--font-sans);
+    color:var(--text-white);
+    background:#000;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+  
+  /* HERO */
+  .hero{
+    position:relative;
+    width:100%;
+    height:100vh;
+    background-size:cover;
+    background-position:center;
+    display:block;
+    overflow:hidden;
+  }
+  
+  /* Centering container */
+  .hero-inner{
+    max-width:var(--max-width);
+    margin:0 auto;
+    padding:1.5rem;
+    height:calc(100vh - 72px); /* preserve similar spacing to original */
+    display:flex;
+    align-items:center;
+  }
+  
+  /* Content column */
+  .hero-content{
+    width:100%;
+    color:var(--text-white);
+    /* take ~75% on large screens */
+    max-width:900px;
+  }
+  
+  /* Intro line */
+  .intro{
+    font-size:0.95rem;
+    opacity:.92;
+    margin-bottom:1rem;
+    animation:fadeInUp .9s ease-out both;
+    animation-delay:.15s;
+  }
+  
+  /* Headline styles */
+  .headline{
+    font-weight:800;
+    line-height:0.95;
+    letter-spacing:0.18em;
+    margin:0;
+    margin-top:-.1rem;
+    animation:fadeInUp .9s ease-out both;
+    animation-delay:.25s;
+  }
+  
+  /* Each line of headline */
+  .headline-line{
+    display:block;
+    color:var(--accent);
+    font-size:3.6rem; /* base */
+  }
+  
+  /* Subtitle */
+  .subtitle{
+    margin-top:1.5rem;
+    max-width:40rem;
+    font-size:1.125rem;
+    opacity:.9;
+    animation:fadeInUp .9s ease-out both;
+    animation-delay:.45s;
+  }
+  
+  /* CTA */
+  .cta-wrap{ margin-top:2.25rem; animation:fadeInUp .9s ease-out both; animation-delay:.65s; }
+  .cta{
+    display:inline-flex;
+    align-items:center;
+    gap:.6rem;
+    padding:.65rem 1.25rem;
+    border:2px solid var(--accent-border);
+    border-radius:.6rem;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-weight:600;
+    letter-spacing:.08em;
+    font-size:.9rem;
+    transition:all .28s ease;
+    color:var(--text-white);
+    background:transparent;
+  }
+  .cta:focus{ outline:3px solid rgba(255,255,255,.12); outline-offset:3px; }
+  .cta:hover{ background:var(--text-white); color:#000; transform:translateY(-2px); }
+  
+  /* Envelope icon sizing */
+  .icon-envelope{ width:1.1rem; height:1.1rem; display:block; }
+  
+  /* bottom fade */
+  .bottom-fade{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:6rem;
+    background:linear-gradient(0deg, rgba(0,0,0,0.75), transparent);
+    pointer-events:none;
+  }
+  
+  /* Animations */
+  @keyframes fadeInUp {
+    0%{ opacity:0; transform:translateY(20px); }
+    100%{ opacity:1; transform:translateY(0); }
+  }
+  
+  /* Responsive headline sizing */
+  @media (min-width:480px){
+    .headline-line{ font-size:4.5rem; }
+  }
+  @media (min-width:768px){
+    .headline-line{ font-size:5.5rem; }
+  }
+  @media (min-width:1024px){
+    .headline-line{ font-size:6.5rem; }
+  }
+  
+  /* Small-screen letter-spacing tweak */
+  @media (max-width:420px){
+    .headline{ letter-spacing:0.07em; }
+    .headline-line{ font-size:2.4rem; }
+    .hero-inner{ padding:1rem; }
+    .subtitle{ font-size:1rem; }
+  }
+  
+  /* Utility: make sure link outlines are visible for keyboard users */
+  a:focus{ outline-offset:3px }
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .hero h1, .hero h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+  }
+  #home{
+    background: url('./images/software-developer-6521720_1280\ \(2\).jpg') no-repeat center center/cover;
+  }
+  /* Basic variables */
+  :root{
+    --bg-image: 'hero-bg.jpg';
+    --nav-offset: 80px;
+  
+    --overlay-color: rgba(0,0,0,0.78);
+    --tint-left: rgba(88,55,255,0.10);
+    --tint-right: rgba(47,223,214,0.08);
+    --vignette-color: rgba(0,0,0,0.78);
+    --backdrop-blur: 3px;
+    --brightness: 0.78;
+    --contrast: 1.05;
+    --saturate: 0.9;
+  
+    --accent: #2ff1d6;
+    --accent-border: #e11d48;
+    --text-white: #fff;
+    --max-width: 1200px;
+    --font-sans: 'Montserrat', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  
+  
+  
+  /* Reset-ish */
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family: var(--font-sans);
+    color:var(--text-white);
+    background:#000;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+  
+  /* HERO */
+  .hero{
+    position:relative;
+    width:100%;
+    height:100vh;
+    background-size:cover;
+    background-position:center;
+    display:block;
+    overflow:hidden;
+  }
+  
+  /* Centering container */
+  .hero-inner{
+    max-width:var(--max-width);
+    margin:0 auto;
+    padding:20px;
+    height:calc(100%); /* preserve similar spacing to original */
+    display:flex;
+    align-items:center;
+    padding-top:80px
+  }
+  
+  /* Content column */
+  .hero-content{
+    width:100%;
+    color:var(--text-white);
+    /* take ~75% on large screens */
+    max-width:900px;
+  }
+  
+  .intro {
+    font-family: var(--font-sans);
+    font-size: 1.4rem;        /* bigger */
+    font-weight: 700;         /* bold */
+    letter-spacing: 0.06em;   /* subtle techy spacing */
+    color: var(--accent);     /* neon accent */
+    margin-bottom: 1.2rem;
+    animation: fadeInUp 0.9s ease-out both;
+    animation-delay: 0.15s;
+  }
+  
+  .intro strong {
+    font-weight: 800;         /* extra bold for name */
+    color: #ffffff;           /* crisp white for contrast */
+  }
+  
+  
+  /* Headline styles */
+  .headline{
+    font-weight:800;
+    line-height:0.95;
+    letter-spacing:0.18em;
+    margin:0;
+    margin-top:-.1rem;
+    animation:fadeInUp .9s ease-out both;
+    animation-delay:.25s;
+  }
+  
+  /* Each line of headline */
+  .headline-line{
+    display:block;
+    color:var(--accent);
+    font-size:3.6rem; /* base */
+  }
+  
+  /* Subtitle */
+  .subtitle{
+    margin-top:1.5rem;
+    max-width:40rem;
+    font-size:1.125rem;
+    opacity:.9;
+    animation:fadeInUp .9s ease-out both;
+    animation-delay:.45s;
+  }
+  
+  /* CTA */
+  .cta-wrap{ margin-top:2.25rem; animation:fadeInUp .9s ease-out both; animation-delay:.65s; }
+  .cta{
+    display:inline-flex;
+    align-items:center;
+    gap:.6rem;
+    padding:.65rem 1.25rem;
+    border:2px solid var(--accent-border);
+    border-radius:.6rem;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-weight:600;
+    letter-spacing:.08em;
+    font-size:.9rem;
+    transition:all .28s ease;
+    color:var(--text-white);
+    background:transparent;
+  }
+  .cta:focus{ outline:3px solid rgba(255,255,255,.12); outline-offset:3px; }
+  .cta:hover{ background:var(--text-white); color:#000; transform:translateY(-2px); }
+  
+  /* Envelope icon sizing */
+  .icon-envelope{ width:1.1rem; height:1.1rem; display:block; }
+  
+  /* bottom fade */
+  .bottom-fade{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:6rem;
+    background:linear-gradient(0deg, rgba(0,0,0,0.75), transparent);
+    pointer-events:none;
+  }
+  
+  /* Animations */
+  @keyframes fadeInUp {
+    0%{ opacity:0; transform:translateY(20px); }
+    100%{ opacity:1; transform:translateY(0); }
+  }
+  
+  /* Responsive headline sizing */
+  @media (min-width:480px){
+    .headline-line{ font-size:4.5rem; }
+  }
+  @media (min-width:768px){
+    .headline-line{ font-size:5.5rem; }
+  }
+  @media (min-width:1024px){
+    .headline-line{ font-size:6.5rem; }
+  }
+  
+  /* Small-screen letter-spacing tweak */
+  @media (max-width:420px){
+    .headline{ letter-spacing:0.07em; }
+    .headline-line{ font-size:2.4rem; }
+    .hero-inner{ padding:1rem; }
+    .subtitle{ font-size:1rem; }
+  }
+  
+  /* Utility: make sure link outlines are visible for keyboard users */
+  a:focus{ outline-offset:3px }
+  
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Portforlio</title>
+      <link rel="stylesheet" href="./style.css" />
+      <script src="https://cdn.tailwindcss.com"></script>
+      <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        rel="stylesheet"
+      />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap"
+        rel="stylesheet"
+      />
+      
+  
+  
+      <link
+        href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+        rel="stylesheet"
+      />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500&display=swap"
+        rel="stylesheet"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    </head>
+    <body>
+      <header
+        class="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-[#0f172a] via-blue-900 to-black shadow-md"
+      >
+        <nav
+          class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4"
+        >
+          <!-- Logo-->
+          <h1
+            class="flex items-center text-3xl drop-shadow-md"
+            style="font-family: 'Pacifico', cursive"
+          >
+            <i class="fas fa-terminal text-blue-400 mr-2"></i> Jomo_Dev
+          </h1>
+  
+          <!-- Nav Links -->
+          <ul class="flex space-x-8 text-lg font-semibold">
+            <li>
+              <a href="#home" class="text-white hover:text-blue-400 transition"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a href="#about" class="text-white hover:text-blue-400 transition"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="#projects"
+                class="text-white hover:text-blue-400 transition"
+                >Projects</a
+              >
+            </li>
+            <li>
+              <a href="#contact" class="text-white hover:text-blue-400 transition"
+                >Contact</a
+              >
+            </li>
+          </ul>
+          <div class="flex space-x-2">
+            <a
+              href="https://github.com/JOMO418"
+              target="_blank"
+              class="p-3 rounded-full bg-gray-800 text-white hover:bg-gray-700 transition"
+            >
+              <i class="fab fa-github text-2xl"></i>
+            </a>
+            <a
+              href="https://linkedin.com/in/robert-jomo-427aab385"
+              target="_blank"
+              class="p-3 rounded-full bg-blue-600 text-white hover:bg-blue-500 transition"
+            >
+              <i class="fab fa-linkedin text-2xl"></i>
+            </a>
+          </div>
+        </nav>
+  
+        
+        <div
+          class="h-1 w-full bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500"
+        ></div>
+      </header>
+  
+      <!-- Hero Section -->
+      <section id="home">
+          <!-- Hero Section (drop this under your navbar) -->
+          <header
+            class="hero"
+            role="banner"
+            aria-label="Hero"
+            style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('./images/software-developer-6521720_1280\ \(2\).jpg');"
+          >
+            <div class="hero-inner">
+              <div class="hero-content">
+                <p class="intro">
+                  Hi, I'm <strong>ROBERT JOMO</strong>, a Kenyan based
+                </p>
+        
+                <h1 class="headline" aria-label="Main headline">
+                  <span class="headline-line">SOFTWARE DEVELOPER &</span>
+                  <span class="headline-line">NETWORK ENGINEER</span>
+                </h1>
+        
+                <p class="subtitle">
+                  I’m a developer & engineer due to my constant interest in learning and helping in the growth of technology.
+                </p>
+        
+                <div class="cta-wrap">
+                  <a href="#contact" class="cta" role="button" aria-label="Get in touch">
+                    <!-- Envelope SVG icon -->
+                    <svg class="icon-envelope" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <path d="M2 6.5A2.5 2.5 0 0 1 4.5 4h15A2.5 2.5 0 0 1 22 6.5v11A2.5 2.5 0 0 1 19.5 20h-15A2.5 2.5 0 0 1 2 17.5v-11zM4.5 6 12 11l7.5-5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Get in Touch</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+        
+            <!-- Bottom gradient fade -->
+            <div class="bottom-fade" aria-hidden="true"></div>
+          </header>
+        </body>
+        </html>
+        
+          </section>
+  
+     
+    </body>
+  </html>   /* Basic variables */
+    :root{
+      --bg-image: 'hero-bg.jpg';
+      --nav-offset: 80px;
+    
+      --overlay-color: rgba(0,0,0,0.78);
+      --tint-left: rgba(88,55,255,0.10);
+      --tint-right: rgba(47,223,214,0.08);
+      --vignette-color: rgba(0,0,0,0.78);
+      --backdrop-blur: 3px;
+      --brightness: 0.78;
+      --contrast: 1.05;
+      --saturate: 0.9;
+    
+      --accent: #2ff1d6;
+      --accent-border: #e11d48;
+      --text-white: #fff;
+      --max-width: 1200px;
+      --font-sans: 'Montserrat', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    
+    
+    
+    /* Reset-ish */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family: var(--font-sans);
+      color:var(--text-white);
+      background:#000;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    
+    /* HERO */
+    .hero{
+      position:relative;
+      width:100%;
+      height:100vh;
+      background-size:cover;
+      background-position:center;
+      display:block;
+      overflow:hidden;
+    }
+    
+    /* Centering container */
+    .hero-inner{
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding:20px;
+      height:calc(100%); /* preserve similar spacing to original */
+      display:flex;
+      align-items:center;
+      padding-top:80px
+    }
+    
+    /* Content column */
+    .hero-content{
+      width:100%;
+      color:var(--text-white);
+      /* take ~75% on large screens */
+      max-width:900px;
+    }
+    
+    .intro {
+      font-family: var(--font-sans);
+      font-size: 1.4rem;        /* bigger */
+      font-weight: 700;         /* bold */
+      letter-spacing: 0.06em;   /* subtle techy spacing */
+      color: var(--accent);     /* neon accent */
+      margin-bottom: 1.2rem;
+      animation: fadeInUp 0.9s ease-out both;
+      animation-delay: 0.15s;
+    }
+    
+    .intro strong {
+      font-weight: 800;         /* extra bold for name */
+      color: #ffffff;           /* crisp white for contrast */
+    }
+    
+    
+    /* Headline styles */
+    .headline{
+      font-weight:800;
+      line-height:0.95;
+      letter-spacing:0.18em;
+      margin:0;
+      margin-top:-.1rem;
+      animation:fadeInUp .9s ease-out both;
+      animation-delay:.25s;
+    }
+    
+    /* Each line of headline */
+    .headline-line{
+      display:block;
+      color:var(--accent);
+      font-size:3.6rem; /* base */
+    }
+    
+    /* Subtitle */
+    .subtitle{
+      margin-top:1.5rem;
+      max-width:40rem;
+      font-size:1.125rem;
+      opacity:.9;
+      animation:fadeInUp .9s ease-out both;
+      animation-delay:.45s;
+    }
+    
+    /* CTA */
+    .cta-wrap{ margin-top:2.25rem; animation:fadeInUp .9s ease-out both; animation-delay:.65s; }
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      gap:.6rem;
+      padding:.65rem 1.25rem;
+      border:2px solid var(--accent-border);
+      border-radius:.6rem;
+      text-decoration:none;
+      text-transform:uppercase;
+      font-weight:600;
+      letter-spacing:.08em;
+      font-size:.9rem;
+      transition:all .28s ease;
+      color:var(--text-white);
+      background:transparent;
+    }
+    .cta:focus{ outline:3px solid rgba(255,255,255,.12); outline-offset:3px; }
+    .cta:hover{ background:var(--text-white); color:#000; transform:translateY(-2px); }
+    
+    /* Envelope icon sizing */
+    .icon-envelope{ width:1.1rem; height:1.1rem; display:block; }
+    
+    /* bottom fade */
+    .bottom-fade{
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      height:6rem;
+      background:linear-gradient(0deg, rgba(0,0,0,0.75), transparent);
+      pointer-events:none;
+    }
+    
+    /* Animations */
+    @keyframes fadeInUp {
+      0%{ opacity:0; transform:translateY(20px); }
+      100%{ opacity:1; transform:translateY(0); }
+    }
+    
+    /* Responsive headline sizing */
+    @media (min-width:480px){
+      .headline-line{ font-size:4.5rem; }
+    }
+    @media (min-width:768px){
+      .headline-line{ font-size:5.5rem; }
+    }
+    @media (min-width:1024px){
+      .headline-line{ font-size:6.5rem; }
+    }
+    
+    /* Small-screen letter-spacing tweak */
+    @media (max-width:420px){
+      .headline{ letter-spacing:0.07em; }
+      .headline-line{ font-size:2.4rem; }
+      .hero-inner{ padding:1rem; }
+      .subtitle{ font-size:1rem; }
+    }
+    
+    /* Utility: make sure link outlines are visible for keyboard users */
+    a:focus{ outline-offset:3px }
+    ill go with A  
