@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portforlio</title>
   <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./responsive.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -20,6 +21,19 @@
 </head>
 
 <body>
+  <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/a2e0f1f5f6.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
   <header class="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-[#0f172a] via-blue-900 to-black shadow-md">
     <nav class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
       <!-- Logo-->
@@ -28,25 +42,15 @@
       </h1>
 
       <!-- Nav Links -->
-      <ul class="flex space-x-8 text-lg font-semibold">
-        <li>
-          <a href="#home" class="text-white hover:text-blue-400 transition">Home</a>
-        </li>
-        <li>
-          <a href="#about" class="text-white hover:text-blue-400 transition">About</a>
-        </li>
-        <li>
-          <a href="#skills" class="text-white hover:text-blue-400 transition">Skills</a>
-        </li>
-        <li>
-          <a href="#projects" class="text-white hover:text-blue-400 transition">Projects</a>
-          </li>
-        <li>
-          <a href="#contact" class="text-white hover:text-blue-400 transition">Contact</a>
-        </li>
-
+      <ul class="hidden md:flex space-x-8 text-lg font-semibold">
+        <li><a href="#home" class="text-white hover:text-blue-400 transition">Home</a></li>
+        <li><a href="#about" class="text-white hover:text-blue-400 transition">About</a></li>
+        <li><a href="#skills" class="text-white hover:text-blue-400 transition">Skills</a></li>
+        <li><a href="#projects" class="text-white hover:text-blue-400 transition">Projects</a></li>
+        <li><a href="#contact" class="text-white hover:text-blue-400 transition">Contact</a></li>
       </ul>
-      <div class="flex space-x-2">
+
+      <div class="hidden md:flex space-x-2">
         <a href="https://github.com/JOMO418" target="_blank"
           class="p-3 rounded-full bg-gray-800 text-white hover:bg-gray-700 transition">
           <i class="fab fa-github text-2xl"></i>
@@ -58,6 +62,27 @@
       </div>
     </nav>
 
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-button"
+      class="md:hidden absolute top-4 right-6 text-white focus:outline-none z-50">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+      class="hidden md:hidden absolute top-16 left-0 w-full bg-gradient-to-r from-[#0f172a] via-blue-900 to-black shadow-md">
+      <ul class="flex flex-col space-y-4 p-6 text-lg font-semibold">
+        <li><a href="#home" class="block text-white hover:text-blue-400 transition">Home</a></li>
+        <li><a href="#about" class="block text-white hover:text-blue-400 transition">About</a></li>
+        <li><a href="#skills" class="block text-white hover:text-blue-400 transition">Skills</a></li>
+        <li><a href="#projects" class="block text-white hover:text-blue-400 transition">Projects</a></li>
+        <li><a href="#contact" class="block text-white hover:text-blue-400 transition">Contact</a></li>
+      </ul>
+    </div>
 
     <div class="h-1 w-full bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500"></div>
   </header>
@@ -65,45 +90,49 @@
   <!-- Hero Section -->
   <section id="home">
     <header class="hero" role="banner" aria-label="Hero">
-
       <div class="hero-inner">
         <div class="hero-content">
           <p class="intro">
             Hi, I'm <strong>ROBERT JOMO</strong>, a Kenyan based
           </p>
- 
           <h1 class="headline" aria-label="Main headline">
             <span class="headline-line">SOFTWARE DEVELOPER.</span>
-
           </h1>
-
           <p class="hero-text">
             From concept to code, I bring ideas to life — building scalable, modern applications that solve real-world
             problems and drive meaningful impact.
           </p>
-
-
           <div class="cta-wrap">
             <a href="#contact" class="cta" role="button" aria-label="Get in touch">
-              <!-- Envelope SVG icon -->
               <svg class="icon-envelope" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path
                   d="M2 6.5A2.5 2.5 0 0 1 4.5 4h15A2.5 2.5 0 0 1 22 6.5v11A2.5 2.5 0 0 1 19.5 20h-15A2.5 2.5 0 0 1 2 17.5v-11zM4.5 6 12 11l7.5-5"
-                  fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                  fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+                  stroke-linejoin="round" />
               </svg>
               <span>Get in Touch</span>
             </a>
           </div>
         </div>
       </div>
-
-      <!-- Bottom gradient fade -->
       <div class="bottom-fade" aria-hidden="true"></div>
+    </header>
+  </section>
 
+  <!-- Toggle Script -->
+  <script>
+    const menuButton = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuButton.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  </script>
 </body>
 
 </html>
-</header>
+
+  
 
 </section>
 <section id="about">
@@ -123,7 +152,7 @@
         ambitious projects and deliver high-quality results.
       </p>
 
-      <a href="mailto:youremail@example.com" class="cta">
+      <a href="jomorobert043@gmail.com" class="cta">
         <img src="https://img.icons8.com/ios-glyphs/30/000000/new-post.png" alt="Email Icon">
         Email Me
       </a>
@@ -239,7 +268,7 @@
           </p>
         </div>
         <div class="project-img">
-          <img src="./images/Jomo portforlio.png" alt="website">
+         <a href=""> <img src="./images/Jomo portforlio.png" alt="website"></a>
         </div>
       </div>
 
@@ -249,11 +278,15 @@
           <h1>Project 2</h1>
           <h2 class="b">Personal website portfolio</h2>
           <p>
-            I developed a responsive personal portfolio website for a client who works as a medical sales representative for a pharmaceutical company. The site showcases the client's professional background, skills, and achievements, providing a clean and modern interface that works seamlessly across devices. I built it using HTML, CSS, and JavaScript, focusing on both usability and aesthetic appeal to create a professional online presence.
+            I developed a responsive personal portfolio website for a client who works as a medical sales representative
+            for a pharmaceutical company. The site showcases the client's professional background, skills, and
+            achievements, providing a clean and modern interface that works seamlessly across devices. I built it using
+            HTML, CSS, and JavaScript, focusing on both usability and aesthetic appeal to create a professional online
+            presence.
           </p>
         </div>
         <div class="project-img">
-          <img src="./images/Zack portforlio.png" alt="Personal professional website">
+          <a href="https://ezekielportforlio.netlify.app/"><img src="./images/Zack portforlio.png" alt="Personal professional website"></a>
         </div>
       </div>
 
@@ -263,33 +296,42 @@
           <h1>Project 3</h1>
           <h2 class="b">Javascript game</h2>
           <p>
-            While practicing my JavaScript skills, I created a game inspired by Simon’s game. It helped me strengthen my understanding of DOM manipulation, event handling, and game logic, resulting in an interactive and engaging browser-based experience.
+            While practicing my JavaScript skills, I created a game inspired by Simon’s game. It helped me strengthen my
+            understanding of DOM manipulation, event handling, and game logic, resulting in an interactive and engaging
+            browser-based experience.
           </p>
-          
+
         </div>
         <div class="project-img">
-          <img src="./images/My game.png" alt="Personal professional website">
+         <a href="https://jomosgame.netlify.app/"> <img src="./images/My game.png" alt="Personal professional website"></a>
         </div>
       </div>
       <!-- Project 4 -->
       <div class="project-item">
         <div class="project-info">
-          <h1>Project 2</h1>
+          <h1>Project 4</h1>
           <h2 class="b">School website</h2>
           <p>
-            This was a class project completed after our Responsive Web Design unit. We built a fully responsive website using Tailwind CSS, HTML, and CSS, focusing on modern layout techniques, mobile-first design, and clean, accessible user interfaces.
+            This was a class project completed after our Responsive Web Design unit. We built a fully responsive website
+            using Tailwind CSS, HTML, and CSS, focusing on modern layout techniques, mobile-first design, and clean,
+            accessible user interfaces.
           </p>
-          
+
         </div>
         <div class="project-img">
-          <img src="./images/Kings.png" alt="Personal professional website">
+        <a href="https://kingscolleg.netlify.app/">  <img src="./images/Kings.png" alt="Personal professional website"></a>
         </div>
       </div>
 </section>
 <section id="contact" class="contact-section" aria-labelledby="contact-heading">
+   <div class="contacts-header">
+    <h1 class="section-title">&lt;CONTACT <span class="highlight">ME&gt;</span></h1>
+  </div>
+
   <!-- Particle Background -->
   <div id="particles-js"></div>
 
+ 
   <!-- Contact Card -->
   <div class="contact-card glassmorphism" data-aos="fade-up" role="form">
     <h2 id="contact-heading" class="section-title">Let’s Connect</h2>
@@ -298,22 +340,57 @@
     <div class="contact-content">
       <!-- Contact Info -->
       <address class="contact-info">
-        <p><i class="bi bi-envelope-fill" aria-hidden="true"></i> 
-          <a href="daviszack043@gmail.com" aria-label="Send email">jomorobert043@gmail.com/a>
+        <p><i class="bi bi-envelope-fill" aria-hidden="true"></i>
+          <a href="jomorobert043@gmail.com" aria-label="Send email">jomorobert043@gmail.com</a>
         </p>
-        <p><i class="bi bi-phone-fill" aria-hidden="true"></i> 
-          <a href="tel:+254708333761" aria-label="Call phone">+254798818197</a>
+        <p><i class="bi bi-phone-fill" aria-hidden="true"></i>
+          <a href="tel:+254798818197" aria-label="Call phone">+254798818197</a>
         </p>
         <p><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Nairobi, Kenya</p>
+
         <div class="contact-socials">
-          <a href="https://wa.me/+25470798818197" target="_blank" aria-label="Chat on WhatsApp">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" alt="WhatsApp" class="social-icon"> WhatsApp
+          <!-- Email -->
+          <a href="jomorobert043@gmail.com" target="_blank" aria-label="Send Email">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email"
+              class="social-icon"> Email
           </a>
-          <a href="https://facebook.com/yourprofile" target="_blank" aria-label="View Facebook">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Facebook_Logo.png" alt="Facebook" class="social-icon"> Facebook
+
+          <!-- Twitter -->
+          <a href="https://twitter.com/Lil__Jomo" target="_blank" aria-label="View Twitter">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Logo_of_Twitter.svg" alt="Twitter"
+              class="social-icon"> Twitter
+          </a>
+
+          <!-- LinkedIn -->
+          <a href="https://linkedin.com/in/robert-jomo-427aab385" target="_blank" aria-label="View LinkedIn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo.svg" alt="LinkedIn"
+              class="social-icon"> LinkedIn
+          </a>
+
+          <!-- GitHub -->
+          <a href="https://github.com/JOMO418" target="_blank" aria-label="View GitHub">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"
+              class="social-icon"> GitHub
+          </a>
+
+          <!-- Instagram -->
+          <a href="https://instagram.com/Lil__Jomo" target="_blank" aria-label="View Instagram">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"
+              class="social-icon"> Instagram
+          </a>
+
+          <!-- WhatsApp-->
+          <a href="https://wa.me/+25470798818197" target="_blank" aria-label="Chat on WhatsApp">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg"
+              alt="WhatsApp" class="social-icon"> WhatsApp
+          </a>
+          <!-- Facebook-->
+          <a href="https://facebook.com/Robert Jomo" target="_blank" aria-label="View Facebook">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Facebook_Logo.png" alt="Facebook"
+              class="social-icon"> Facebook
           </a>
         </div>
-        
+
       </address>
 
       <!-- Contact Form -->
@@ -326,6 +403,39 @@
     </div>
   </div>
 </section>
+
+
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-container">
+    <h2 class="footer-logo">Robert Jomo</h2>
+    <p class="footer-tagline">Turning concept to code</p>
+
+  
+
+    <div class="footer-info">
+      <p><i class="bi bi-geo-alt-fill"></i> Nairobi, Kenya</p>
+      <p id="footer-clock"></p>
+    </div>
+
+    <hr class="footer-divider">
+
+    <p class="footer-copy">© Robert Jomo. All Rights Reserved.
+      <span class="motto">"Turning Concept to Code"</span>
+    </p>
+  </div>
+</footer>
+
+<!-- Back to Top Button -->
+<button id="backToTop"><i class="bi bi-arrow-up">Top</i></button>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="./main.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 
 </body>
 
