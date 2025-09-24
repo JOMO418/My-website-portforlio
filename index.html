@@ -1,47 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portforlio</title>
-  <link rel="stylesheet" href="./style.css" />
-  <link rel="stylesheet" href="./responsive.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio — Robert Jomo</title>
+
+  
+  <link rel="stylesheet" href="./style.css">
+  
+
+  
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Icons & Fonts -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
-
-
-
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500&display=swap"
-    rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+
+
 </head>
-
-<body>
-  <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio</title>
-  <link rel="stylesheet" href="./style.css" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://kit.fontawesome.com/a2e0f1f5f6.js" crossorigin="anonymous"></script>
-</head>
-
-<body>
+<body class="antialiased">
   <header class="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-[#0f172a] via-blue-900 to-black shadow-md">
     <nav class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-      <!-- Logo-->
-      <h1 class="flex items-center text-3xl drop-shadow-md" style="font-family: 'Pacifico', cursive" id="lg-text">
-        <i class="fas fa-terminal text-black-400 mr-2" id="lg"></i> Jomo_Dev
+      <!-- Logo -->
+      <h1 class="flex items-center text-3xl drop-shadow-md" style="font-family: 'Pacifico', cursive">
+        <i class="fas fa-terminal mr-2" aria-hidden="true"></i>
+        Jomo_Dev
       </h1>
 
-      <!-- Nav Links -->
+      <!-- Desktop Nav -->
       <ul class="hidden md:flex space-x-8 text-lg font-semibold">
         <li><a href="#home" class="text-white hover:text-blue-400 transition">Home</a></li>
         <li><a href="#about" class="text-white hover:text-blue-400 transition">About</a></li>
@@ -51,30 +39,24 @@
       </ul>
 
       <div class="hidden md:flex space-x-2">
-        <a href="https://github.com/JOMO418" target="_blank"
-          class="p-3 rounded-full bg-gray-800 text-white hover:bg-gray-700 transition">
+        <a href="https://github.com/JOMO418" target="_blank" rel="noopener" class="p-3 rounded-full bg-gray-800 text-white hover:bg-gray-700 transition" aria-label="GitHub">
           <i class="fab fa-github text-2xl"></i>
         </a>
-        <a href="https://linkedin.com/in/robert-jomo-427aab385" target="_blank"
-          class="p-3 rounded-full bg-blue-600 text-white hover:bg-blue-500 transition">
+        <a href="https://linkedin.com/in/robert-jomo-427aab385" target="_blank" rel="noopener" class="p-3 rounded-full bg-blue-600 text-white hover:bg-blue-500 transition" aria-label="LinkedIn">
           <i class="fab fa-linkedin text-2xl"></i>
         </a>
       </div>
+
+      <!-- Mobile menu button -->
+      <button id="mobile-menu-button" class="md:hidden absolute top-4 right-6 text-white focus:outline-none z-50" aria-label="Toggle menu">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
     </nav>
 
-    <!-- Mobile Menu Button -->
-    <button id="mobile-menu-button"
-      class="md:hidden absolute top-4 right-6 text-white focus:outline-none z-50">
-      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M4 6h16M4 12h16M4 18h16"></path>
-      </svg>
-    </button>
-
     <!-- Mobile Menu -->
-    <div id="mobile-menu"
-      class="hidden md:hidden absolute top-16 left-0 w-full bg-gradient-to-r from-[#0f172a] via-blue-900 to-black shadow-md">
+    <div id="mobile-menu" class="hidden absolute top-16 left-0 w-full bg-gradient-to-r from-[#0f172a] via-blue-900 to-black shadow-md md:hidden">
       <ul class="flex flex-col space-y-4 p-6 text-lg font-semibold">
         <li><a href="#home" class="block text-white hover:text-blue-400 transition">Home</a></li>
         <li><a href="#about" class="block text-white hover:text-blue-400 transition">About</a></li>
@@ -119,15 +101,7 @@
     </header>
   </section>
 
-  <!-- Toggle Script -->
-  <script>
-    const menuButton = document.getElementById("mobile-menu-button");
-    const mobileMenu = document.getElementById("mobile-menu");
-
-    menuButton.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-    });
-  </script>
+  
 </body>
 
 </html>
@@ -412,11 +386,11 @@
     <p class="footer-tagline">Turning concept to code</p>
 
   
-
-    <div class="footer-info">
-      <p><i class="bi bi-geo-alt-fill"></i> Nairobi, Kenya</p>
-      <p id="footer-clock"></p>
-    </div>
+ <div class="footer-info">
+  <p><i class="bi bi-geo-alt-fill"></i> Nairobi, Kenya</p>
+  <p id="footer-clock">⏰ Loading...</p>
+</div>
+    
 
     <hr class="footer-divider">
 
@@ -424,16 +398,23 @@
       <span class="motto">"Turning Concept to Code"</span>
     </p>
   </div>
+ 
 </footer>
 
 <!-- Back to Top Button -->
-<button id="backToTop"><i class="bi bi-arrow-up">Top</i></button>
+<button id="backToTop" class="hidden fixed bottom-6 right-6 bg-blue-600 text-black-400 px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition">
+  ↑ Top
+</button>
 
 
 
 
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+
+
 <script src="./main.js"></script>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 
