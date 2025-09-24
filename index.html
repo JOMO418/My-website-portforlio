@@ -23,8 +23,8 @@
   <header class="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-[#0f172a] via-blue-900 to-black shadow-md">
     <nav class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
       <!-- Logo-->
-      <h1 class="flex items-center text-3xl drop-shadow-md" style="font-family: 'Pacifico', cursive">
-        <i class="fas fa-terminal text-blue-400 mr-2"></i> Jomo_Dev
+      <h1 class="flex items-center text-3xl drop-shadow-md" style="font-family: 'Pacifico', cursive" id="lg-text">
+        <i class="fas fa-terminal text-black-400 mr-2" id="lg"></i> Jomo_Dev
       </h1>
 
       <!-- Nav Links -->
@@ -36,11 +36,15 @@
           <a href="#about" class="text-white hover:text-blue-400 transition">About</a>
         </li>
         <li>
-          <a href="#projects" class="text-white hover:text-blue-400 transition">Projects</a>
+          <a href="#skills" class="text-white hover:text-blue-400 transition">Skills</a>
         </li>
+        <li>
+          <a href="#projects" class="text-white hover:text-blue-400 transition">Projects</a>
+          </li>
         <li>
           <a href="#contact" class="text-white hover:text-blue-400 transition">Contact</a>
         </li>
+
       </ul>
       <div class="flex space-x-2">
         <a href="https://github.com/JOMO418" target="_blank"
@@ -67,7 +71,7 @@
           <p class="intro">
             Hi, I'm <strong>ROBERT JOMO</strong>, a Kenyan based
           </p>
-
+ 
           <h1 class="headline" aria-label="Main headline">
             <span class="headline-line">SOFTWARE DEVELOPER.</span>
 
@@ -102,6 +106,31 @@
 </header>
 
 </section>
+<section id="about">
+  <div class="about container">
+    <div class="about-img">
+      <img src="./images/Me.jpeg" alt="Jomo">
+    </div>
+
+    <div class="col-right">
+      <h1 class="section-title">&lt;About <span class="highlight">me&gt;</span></h1>
+      <h2><span class="a">Software</span> Developer</h2>
+      <p>
+        I am Jomo, a passionate software developer with a strong grasp of modern development tools and languages. I
+        thrive on creating efficient, innovative solutions and enjoy exploring both front-end and back-end technologies.
+        Curious by nature, I continuously expand my knowledge across frameworks, programming languages, and development
+        practices. I am a collaborative team player, a problem solver, and highly organized, eager to contribute to
+        ambitious projects and deliver high-quality results.
+      </p>
+
+      <a href="mailto:youremail@example.com" class="cta">
+        <img src="https://img.icons8.com/ios-glyphs/30/000000/new-post.png" alt="Email Icon">
+        Email Me
+      </a>
+    </div>
+  </div>
+</section>
+
 <section id="skills">
   <div class="skills container">
     <div class="skill-top">
@@ -158,7 +187,7 @@
 
       </div>
 
-      
+
       <div class="skill-item">
         <div class="icon">
           <img src="https://img.icons8.com/color/100/000000/git.png" alt="git-icon">
@@ -190,7 +219,113 @@
   </div>
   </div>
 </section>
+<section id="projects">
+  <div class="projects container">
+    <div class="projects-header">
+      <h1 class="section-title">&lt;Recent <span class="highlight">Projects&gt;</span></h1>
+    </div>
 
+    <div class="all-projects">
+      <!-- Project 1 -->
+      <div class="project-item">
+        <div class="project-info">
+          <h1>Project 1</h1>
+          <h2 class="b">My portfolio</h2>
+          <p>
+            Among the first projects I developed is my portfolio. The
+            languages I used in this project were HTML, CSS, and JS only. The
+            project will continue to have different changes as time goes on, as
+            I can't settle for less.
+          </p>
+        </div>
+        <div class="project-img">
+          <img src="./images/Jomo portforlio.png" alt="website">
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-item">
+        <div class="project-info">
+          <h1>Project 2</h1>
+          <h2 class="b">Personal website portfolio</h2>
+          <p>
+            I developed a responsive personal portfolio website for a client who works as a medical sales representative for a pharmaceutical company. The site showcases the client's professional background, skills, and achievements, providing a clean and modern interface that works seamlessly across devices. I built it using HTML, CSS, and JavaScript, focusing on both usability and aesthetic appeal to create a professional online presence.
+          </p>
+        </div>
+        <div class="project-img">
+          <img src="./images/Zack portforlio.png" alt="Personal professional website">
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-item">
+        <div class="project-info">
+          <h1>Project 3</h1>
+          <h2 class="b">Javascript game</h2>
+          <p>
+            While practicing my JavaScript skills, I created a game inspired by Simon’s game. It helped me strengthen my understanding of DOM manipulation, event handling, and game logic, resulting in an interactive and engaging browser-based experience.
+          </p>
+          
+        </div>
+        <div class="project-img">
+          <img src="./images/My game.png" alt="Personal professional website">
+        </div>
+      </div>
+      <!-- Project 4 -->
+      <div class="project-item">
+        <div class="project-info">
+          <h1>Project 2</h1>
+          <h2 class="b">School website</h2>
+          <p>
+            This was a class project completed after our Responsive Web Design unit. We built a fully responsive website using Tailwind CSS, HTML, and CSS, focusing on modern layout techniques, mobile-first design, and clean, accessible user interfaces.
+          </p>
+          
+        </div>
+        <div class="project-img">
+          <img src="./images/Kings.png" alt="Personal professional website">
+        </div>
+      </div>
+</section>
+<section id="contact" class="contact-section" aria-labelledby="contact-heading">
+  <!-- Particle Background -->
+  <div id="particles-js"></div>
+
+  <!-- Contact Card -->
+  <div class="contact-card glassmorphism" data-aos="fade-up" role="form">
+    <h2 id="contact-heading" class="section-title">Let’s Connect</h2>
+    <p class="section-subtitle">Feel free to reach out to collaborate or say hello 👋</p>
+
+    <div class="contact-content">
+      <!-- Contact Info -->
+      <address class="contact-info">
+        <p><i class="bi bi-envelope-fill" aria-hidden="true"></i> 
+          <a href="daviszack043@gmail.com" aria-label="Send email">jomorobert043@gmail.com/a>
+        </p>
+        <p><i class="bi bi-phone-fill" aria-hidden="true"></i> 
+          <a href="tel:+254708333761" aria-label="Call phone">+254798818197</a>
+        </p>
+        <p><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Nairobi, Kenya</p>
+        <div class="contact-socials">
+          <a href="https://wa.me/+25470798818197" target="_blank" aria-label="Chat on WhatsApp">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" alt="WhatsApp" class="social-icon"> WhatsApp
+          </a>
+          <a href="https://facebook.com/yourprofile" target="_blank" aria-label="View Facebook">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Facebook_Logo.png" alt="Facebook" class="social-icon"> Facebook
+          </a>
+        </div>
+        
+      </address>
+
+      <!-- Contact Form -->
+      <form class="contact-form" aria-label="Contact form">
+        <input type="text" placeholder="Your Name" required aria-label="Your Name" />
+        <input type="email" placeholder="Your Email" required aria-label="Your Email" />
+        <textarea placeholder="Your Message" required aria-label="Your Message"></textarea>
+        <button type="submit"><i class="bi bi-send-fill"></i> Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
 
 </body>
 
