@@ -549,128 +549,182 @@ p {
     font-size: 1.2rem;
   }
 }
+/*PROJECT SECTION STYLING*/
+/* Projects section (scoped) */
 #projects {
   background-color: #f5f5f5;
-  font-size: 8px;
   font-family: "Montserrat", sans-serif;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  /* base size for this section, use rems below */
+  font-size: 16px;
 }
+
+/* container */
 #projects .projects {
-  flex-direction: column;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 100px 0;
+  padding: 80px 20px;
+  display: block;
 }
-#projects .projects-header h1 {
-  margin-bottom: 20px;
-  padding: 1px;
+
+/* header */
+#projects .projects-header {
+  text-align: left;
+  margin-bottom: 28px;
 }
+#projects .projects-header .section-title {
+  font-size: clamp(1.6rem, 2.2vw, 2.4rem);
+  margin: 0;
+  line-height: 1.05;
+}
+#projects .projects-header .highlight {
+  color: #0ea5a4; /* teal accent */
+}
+
+/* list of projects stacked vertically */
 #projects .all-projects {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
+  gap: 32px;
 }
+
+/* each project: two-column layout on desktop, stacked on small screens */
 #projects .project-item {
   display: flex;
-  align-items: stretch;  /* ✅ forces equal height */
-  justify-content: center;
+  align-items: stretch;
+  justify-content: space-between;
   flex-direction: row;
   width: 100%;
-  margin: 40px 0;
+  margin: 0;
   overflow: hidden;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 30px rgba(16, 24, 40, 0.06);
+  background: transparent;
 }
 
-/* Alternate layout for variety (optional) */
-#projects .project-item:nth-child(even) {
-  flex-direction: row-reverse;
+/* alternate layout for variety on wide screens */
+@media (min-width: 900px) {
+  #projects .project-item:nth-child(even) {
+    flex-direction: row-reverse;
+  }
 }
 
+/* project text area */
 #projects .project-info {
-  padding: 30px;
-  flex: 1;   /* ✅ equal flex share with image */
-  height: auto;
+  padding: 28px;
+  flex: 1 1 50%;
+  min-width: 260px;
+  min-height: 260px;            /* keeps cards even-ish */
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
+  gap: 12px;
   background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.95);
   line-height: 1.6;
 }
 
-#projects .project-img {
-  flex: 1;   /* ✅ equal flex share with info */
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  height: auto;  /* let flexbox handle height */
+/* titles inside info */
+#projects .project-info .project-title {
+  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+  margin: 0;
+  opacity: 0.95;
+  font-weight: 600;
+}
+#projects .project-info .project-subtitle {
+  font-size: clamp(0.95rem, 1.2vw, 1rem);
+  margin: 0;
+  opacity: 0.9;
+  font-weight: 500;
 }
 
+/* paragraph: limit width so long text doesn't stretch the design */
+#projects .project-info p {
+  margin: 6px 0 0;
+  font-size: clamp(0.95rem, 1vw, 1rem);
+  max-width: 70ch;             /* prevents overly wide text lines */
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+/* image area */
+#projects .project-img {
+  flex: 1 1 50%;
+  min-width: 260px;
+  min-height: 260px;
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+/* images keep aspect ratio and cover the box */
 #projects .project-img img {
   width: 100%;
-  height: 100%;       /* ✅ fills the container */
-  display: block;     /* removes bottom whitespace */
-  object-fit: cover;  /* keeps proportion, no distortion */
-  transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.45s ease, filter 0.45s ease, box-shadow 0.45s ease;
+  will-change: transform;
 }
 
+/* hover */
+#projects .project-img a:focus,
+#projects .project-img a:hover {
+  outline: none;
+}
 #projects .project-img img:hover {
   transform: scale(1.05);
-  filter: brightness(1.1);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  filter: brightness(1.05);
+  box-shadow: 0 12px 30px rgba(2, 6, 23, 0.15);
 }
 
-#projects .project-info h3 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-#projects .project-info p {
-  font-size: 1.2rem;
-  line-height: 2rem;
-  margin-bottom: 20px;
-}
+/* simple CTA button style (if you add .btn) */
 #projects .project-info .btn {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 10px 18px;
   background-color: crimson;
   color: white;
   text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  border-radius: 6px;
+  transition: background-color 0.25s ease, transform 0.15s ease;
 }
-#projects .project-info .btn:hover {
-  background-color: darkred;
-}
-/*RESPONSIVENESS FOR PROJECTS SECTION*/
+#projects .project-info .btn:hover { background-color: darkred; transform: translateY(-2px); }
 
-@media (max-width: 768px) {
+/* MOBILE: stack and make image sit above text */
+@media (max-width: 899px) {
   #projects .project-item {
     flex-direction: column;
-  }
-  #projects .project-info,
-  #projects .project-img {
-    flex-basis: 100%;
+    gap: 12px;
   }
   #projects .project-img {
-    height: 300px;
+    order: -1;               /* image first on mobile */
+    width: 100%;
+    height: 220px;          /* fixed, consistent height for images on phones */
+    min-height: 220px;
+  }
+  #projects .project-info {
+    min-height: unset;
+    padding: 20px;
   }
 }
+
+/* small phones */
 @media (max-width: 480px) {
-  .section-title {
-    font-size: 2.5rem;
+  #projects .projects {
+    padding: 48px 16px;
   }
-  #projects .project-info h3 {
-    font-size: 1.2rem;
+  #projects .project-img {
+    height: 180px;
+    min-height: 180px;
   }
   #projects .project-info p {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    max-width: 100%;
   }
 }
+
 
 /* CONTACT SECTION STYLING */
 .contact-section {
@@ -685,6 +739,18 @@ p {
   justify-content: center;
   align-items: center;
 }
+
+.contact-section {
+  flex-direction: column;      
+  gap: 1.5rem;                 
+}
+
+
+.contacts-header {
+  width: 100%;
+  text-align: center;
+}
+
 
 
 .contact-card.glassmorphism {
@@ -1038,11 +1104,11 @@ p {
 }
 /* NAVIGATION STYLING */
 
-/* Smooth scrolling */
+
 html {
   scroll-behavior: smooth;
 }
-/* Back to Top Button */
+
 
 /* RESPONSIVENESS FOR NAVIGATION */
 @media (max-width: 480px) {
@@ -1062,4 +1128,261 @@ html {
     padding: 8px 10px;
   }
 }
+
+img,
+.hero .hero-inner img,
+.about-img img,
+#projects .project-img img {
+  max-width: 100%;
+  height: auto;           
+  display: block;
+}
+
+
+.hero,
+#about,
+#skills,
+#projects,
+.contact-section,
+.footer {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+@media (max-width: 1024px) {
+  .cta,
+  .contact-socials a,
+  .contact-form button,
+  #backToTop {
+    padding: 0.7rem 1rem;
+    min-height: 44px; 
+  }
+
+ /
+  #projects .project-item {
+    flex-direction: column;
+  }
+  #projects .project-img {
+    height: 360px; 
+  }
+}
+
+/
+@media (max-width: 768px) {
+ 
+  .hero {
+    height: auto !important;
+    min-height: 65vh;
+    background-position: center top;
+    padding-bottom: 2.25rem;
+    filter: none; 
+  }
+
+  .hero-inner {
+    padding: 18px 20px;
+    padding-top: calc(var(--nav-offset, 80px) + 6px);
+    align-items: flex-start;
+    height: auto;
+  }
+
+  .headline-line {
+    font-size: 3rem !important;
+    line-height: 1.02;
+  }
+
+  .subtitle {
+    font-size: 1.45rem;
+    max-width: 100%;
+  }
+
+  .hero-text {
+    font-size: 1.1rem;
+    line-height: 1.35;
+  }
+
+ 
+  #about {
+    font-size: 16px; 
+    padding: 30px 16px;
+  }
+  #about .about {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 8px;
+  }
+  #about .col-left,
+  #about .col-right {
+    width: 100%;
+    margin: 12px 0;
+  }
+  .about-img {
+    width: 180px;
+    height: 180px;
+    margin: 10px auto;
+  }
+
+ 
+  .skills.container {
+    padding: 60px 20px;
+  }
+  #skills .skill-bottom {
+    flex-direction: column;
+    gap: 12px;
+  }
+  #skills .skill-item {
+    flex-basis: 100%;
+    padding: 20px;
+    margin: 8px 0;
+  }
+  #skills .skill-item h2 {
+    font-size: 1.25rem;
+  }
+
+
+  #projects .project-item {
+    flex-direction: column;
+    margin: 28px 0;
+  }
+  #projects .project-img {
+    height: 280px;
+    width: 100%;
+  }
+  #projects .project-img img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+ 
+  .contact-section {
+    padding: 40px 6%;
+  }
+  .contact-card.glassmorphism {
+    padding: 20px;
+  }
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+
+  .footer {
+    padding: 28px 14px;
+  }
+  .footer-socials {
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+}
+
+
+@media (max-width: 420px) {
+  
+  .hero {
+    min-height: 55vh;
+    padding-bottom: 2.5rem;
+  }
+  .hero-inner {
+    padding: 12px;
+    padding-top: calc(var(--nav-offset, 80px) + 6px);
+  }
+  .headline-line {
+    font-size: 2.4rem !important;
+  }
+  .subtitle {
+    font-size: 1.05rem;
+  }
+  .hero-text {
+    font-size: 1rem;
+  }
+  .intro {
+    font-size: 1rem;
+  }
+
+ 
+  .about-img {
+    width: 140px;
+    height: 140px;
+  }
+
+  
+  #projects .project-img {
+    height: 220px;
+  }
+
+ 
+  .contact-card.glassmorphism {
+    padding: 14px;
+  }
+  .contact-form button {
+    padding: 12px 16px;
+    width: 100%;
+  }
+
+ 
+  .footer {
+    padding: 20px 12px;
+  }
+
+ 
+  #backToTop {
+    bottom: 16px;
+    right: 12px;
+    padding: 8px 10px;
+    font-size: 1.1rem;
+  }
+}
+
+
+@media (max-width: 360px) {
+  .headline-line {
+    font-size: 2.0rem !important;
+    letter-spacing: 0.03em;
+  }
+  .subtitle {
+    font-size: 0.95rem;
+  }
+  .hero-text {
+    font-size: 0.95rem;
+  }
+  .about-img {
+    width: 120px;
+    height: 120px;
+  }
+  #projects .project-img {
+    height: 180px;
+  }
+  .section-title {
+    font-size: 1.8rem;
+  }
+  p {
+    font-size: 0.95rem;
+    line-height: 1.6rem;
+  }
+}
+
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+  outline: 3px solid rgba(255,255,255,0.08);
+  outline-offset: 3px;
+}
+
+
+html, body {
+  overflow-x: hidden;
+}
+
+
+@media (max-width: 768px) {
+  .hero {
+    background-attachment: scroll; 
+  }
+}
+
+
+
 /* END OF STYLE.CSS */
